@@ -6,7 +6,7 @@ const fwords = ['WEB DEVELOPER', 'CREATIVE DESIGNER', 'PROBLEM SOLVER'];
 
 const About = () => {
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 text-emerald-500 gap-10'>
+    <div className='grid grid-cols-1 md:grid-cols-2 text-emerald-500 gap-10 py-14'>
       <div className='flex flex-col items-start gap-y-2'>
         <span className='text-3xl'>Yello...</span>
         <h1 className='text-7xl font-semibold text-zinc-300'>Saatvik Here!</h1>
