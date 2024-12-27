@@ -2,7 +2,7 @@ import { HoverEffect } from '../ui/card-hover-effect';
 
 export function ServicesCard() {
   return (
-    <div className='w-5xl mx-auto'>
+    <div className='w-5xl mx-auto py-4'>
       <HoverEffect items={Services} />
     </div>
   );
