@@ -10,21 +10,21 @@ const ProjectsSection = () => {
           href='https://roomify.itsaatvik.dev/'
           name='Roomify'
           desc='A Room Booking application'
-          img='/roomify.png'
+          img='/projects/roomify.png'
         />
         <Projects
           title='Expense Tracker'
           href='https://expense-tracker.itsaatvik.dev/'
           name='Expense Tracker'
           desc='An Expense Tracker'
-          img='/expense.png'
+          img='/projects/expense.png'
         />
         <Projects
           title='Dashboard'
           href='https://admin-dashboard.itsaatvik.dev/'
           name='Dashboard'
           desc='Admin Dashboard'
-          img='/dashboard.png'
+          img='/projects/dashboard.png'
         />
       </section>
     </main>
