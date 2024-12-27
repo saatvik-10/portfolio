@@ -49,14 +49,14 @@ const SpotlightEffect: React.FC<SpotlightEffectProps> = ({ children }) => {
 
           if (opacity > 0) {
             ctx.beginPath();
-            ctx.arc(x, y, 1, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(16, 185, 129, ${opacity})`;
+            ctx.arc(x, y, 2, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(16, 185, 145, ${opacity})`;
             ctx.fill();
 
             if (isInSpotlight) {
               ctx.beginPath();
-              ctx.arc(x, y, 5, 0, Math.PI * 2);
-              ctx.fillStyle = `rgba(16, 185, 129, ${opacity * 0.2})`;
+              ctx.arc(x, y, 2, 0, Math.PI * 2);
+              ctx.fillStyle = `rgba(16, 185, 145, ${opacity * 0.2})`;
               ctx.fill();
             }
           }

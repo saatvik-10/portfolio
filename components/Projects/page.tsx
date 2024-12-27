@@ -2,9 +2,9 @@ import { Projects } from '@/components/Projects/Projects';
 
 const ProjectsSection = () => {
   return (
-    <main className='flex flex-col pt-28 text-7xl'>
-      <span className='text-emerald-500 mb-16'>My Projects</span>
-      <section className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+    <main className='flex flex-col py-20'>
+      <span className='text-emerald-500 mb-16 text-7xl'>My Projects</span>
+      <section className='grid grid-cols-1 md:grid-cols-3 gap-8'>
         <Projects
           title='Roomify'
           href='https://roomify.itsaatvik.dev/'

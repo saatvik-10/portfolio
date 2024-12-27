@@ -2,9 +2,12 @@ import Skills from './Skills';
 
 const SkillsSection = () => {
   return (
-    <div className='grid grid-cols-4 md:grid-cols-5 gap-8'>
-      <Skills name='TypeScript' img='/skills/typescript.png' />
-    </div>
+    <main className='py-20'>
+      <span className='text-emerald-500 mb-16 text-7xl'>My Skills</span>
+      <div>
+        <Skills />
+      </div>
+    </main>
   );
 };
 

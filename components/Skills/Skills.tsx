@@ -1,17 +1,15 @@
-import Image from 'next/image';
+'use client';
+import React from 'react';
+import { BackgroundGradient } from '../ui/background-gradient';
 import IconCloud from '@/components/ui/icon-cloud';
+import skills from '@/components/Skills/skills.json';
 
-interface SkillsProps {
-  img: string;
-  name: string;
-}
-
-const Skills = ({ img, name }: SkillsProps) => {
+const Skills = () => {
   return (
     <section>
       <span>My SKills</span>
-      <div className=''>
-        <div className='relative flex size-full max-w-lg items-center justify-center overflow-hidden'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+        <div className='relative flex md:size-96 max-w-lg items-center justify-center overflow-hidden'>
           <IconCloud
             imageArray={[
               '/skills/ex.png',
@@ -29,14 +27,15 @@ const Skills = ({ img, name }: SkillsProps) => {
             ]}
           />
         </div>
-        {/* <div>
-          <div className='grid grid-cols-3 md:grid-cols-4 gap-2'>
-            <div className='border border-emerald-500 flex flex-col p-2 gap-y-1 w-20 h-24'>
-              <img alt='' src={img} />
-              <span className='text-zinc-300'>{name}</span>
-            </div>
-          </div>
-        </div> */}
+        <div className='flex flex-col justify-center text-center text-zinc-300'>
+          <ul className='grid grid-cols-2 md:grid-cols-3 gap-y-8 gap-8 place-content-center'>
+            {skills.map((skill, index) => (
+              <BackgroundGradient className="rounded-[22px] bg-neutral-800 px-3 py-1" key={index}>
+                <li key={index}>{skill.name}</li>
+              </BackgroundGradient>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );
