@@ -50,13 +50,13 @@ const SpotlightEffect: React.FC<SpotlightEffectProps> = ({ children }) => {
           if (opacity > 0) {
             ctx.beginPath();
             ctx.arc(x, y, 2, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(16, 185, 145, ${opacity})`;
+            ctx.fillStyle = `rgba(20, 185, 145, ${opacity})`;
             ctx.fill();
 
             if (isInSpotlight) {
               ctx.beginPath();
               ctx.arc(x, y, 2, 0, Math.PI * 2);
-              ctx.fillStyle = `rgba(16, 185, 145, ${opacity * 0.2})`;
+              ctx.fillStyle = `rgba(20, 185, 145, ${opacity * 0.2})`;
               ctx.fill();
             }
           }

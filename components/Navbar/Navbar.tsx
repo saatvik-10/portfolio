@@ -13,46 +13,34 @@ export function Navbar() {
   const links = [
     {
       title: 'About',
-      icon: (
-        <IconHome className='h-full w-full text-neutral-400' />
-      ),
+      icon: <IconHome className='h-full w-full text-zinc-300' />,
       href: '#',
     },
 
     {
       title: 'Projects',
-      icon: (
-        <IconTerminal2 className='h-full w-full text-neutral-400' />
-      ),
+      icon: <IconTerminal2 className='h-full w-full text-zinc-300' />,
       href: '#',
     },
     {
       title: 'Components',
-      icon: (
-        <IconNewSection className='h-full w-full text-neutral-400' />
-      ),
+      icon: <IconNewSection className='h-full w-full text-zinc-300' />,
       href: '#',
     },
     {
       title: 'Changelog',
-      icon: (
-        <IconExchange className='h-full w-full text-neutral-400' />
-      ),
+      icon: <IconExchange className='h-full w-full text-zinc-300' />,
       href: '#',
     },
 
     {
       title: 'Twitter',
-      icon: (
-        <IconBrandX className='h-full w-full text-neutral-400' />
-      ),
+      icon: <IconBrandX className='h-full w-full text-zinc-300' />,
       href: '#',
     },
     {
       title: 'GitHub',
-      icon: (
-        <IconBrandGithub className='h-full w-full text-neutral-400' />
-      ),
+      icon: <IconBrandGithub className='h-full w-full text-zinc-300' />,
       href: '#',
     },
   ];

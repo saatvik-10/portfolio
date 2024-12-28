@@ -10,9 +10,9 @@ export const HoverEffect = ({
 }: {
   items: {
     img: string;
-    title: string;
-    description: React.ReactNode; // Changed from string to ReactNode
-    link: string;
+    title?: string;
+    description?: React.ReactNode; // Changed from string to ReactNode
+    link?: string;
   }[];
   className?: string;
 }) => {

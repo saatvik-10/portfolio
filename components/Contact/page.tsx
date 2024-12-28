@@ -19,7 +19,7 @@ const ContactSection = () => {
       <span className='text-emerald-500 mb-16 text-7xl'>Contact Me</span>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
         
-        <div className='grid grid-cols-2 gap-2'>
+        <div className='grid grid-cols-2 gap-2 pt-14'>
             
         </div>
 
