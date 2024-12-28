@@ -30,7 +30,7 @@ const Skills = () => {
         <div className='flex flex-col justify-center text-center text-zinc-300'>
           <ul className='grid grid-cols-2 md:grid-cols-3 gap-y-8 gap-8 place-content-center'>
             {skills.map((skill, index) => (
-              <BackgroundGradient className="rounded-[22px] bg-neutral-800 px-3 py-1" key={index}>
+              <BackgroundGradient className="rounded-[22px] bg-neutral-800 px-3 py-1 cursor-pointer" key={index}>
                 <li key={index}>{skill.name}</li>
               </BackgroundGradient>
             ))}
