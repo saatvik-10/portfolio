@@ -1,9 +1,9 @@
 'use client';
-
 import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 
+// Update the type definition to accept ReactNode for description
 export const HoverEffect = ({
   items,
   className,
@@ -11,7 +11,7 @@ export const HoverEffect = ({
   items: {
     img: string;
     title: string;
-    description: string;
+    description: React.ReactNode; // Changed from string to ReactNode
     link: string;
   }[];
   className?: string;
@@ -21,21 +21,21 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        'grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10',
+        'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10',
         className
       )}
     >
       {items.map((item, idx) => (
         <div
           key={item?.link}
-          className='relative group  block p-2 h-full w-full'
+          className='relative group block p-2 h-full w-full'
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className='absolute inset-0 h-full w-full bg-zinc-300/[0.4] block  rounded-3xl'
+                className='absolute inset-0 h-full w-full bg-zinc-300/[0.4] block rounded-3xl'
                 layoutId='hoverBackground'
                 initial={{ opacity: 0 }}
                 animate={{
@@ -80,6 +80,7 @@ export const Card = ({
     </div>
   );
 };
+
 export const CardTitle = ({
   className,
   children,
@@ -88,11 +89,14 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn('text-zinc-300 font-bold tracking-wide', className)}>
+    <h4
+      className={cn('text-zinc-300 font-bold tracking-wide text-lg', className)}
+    >
       {children}
     </h4>
   );
 };
+
 export const CardDescription = ({
   className,
   children,
