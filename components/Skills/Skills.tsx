@@ -2,7 +2,7 @@
 import React from 'react';
 import { BackgroundGradient } from '../ui/background-gradient';
 import IconCloud from '@/components/ui/icon-cloud';
-import skills from '@/components/Skills/skills.json';
+import {SkillsList} from '@/components/Skills/SkillsList';
 
 const Skills = () => {
   return (
@@ -29,7 +29,7 @@ const Skills = () => {
         </div>
         <div className='flex flex-col justify-center text-center text-zinc-300'>
           <ul className='grid grid-cols-2 md:grid-cols-3 gap-y-8 gap-8 place-content-center'>
-            {skills.map((skill, index) => (
+            {SkillsList.map((skill, index) => (
               <BackgroundGradient className="rounded-[22px] bg-neutral-800 px-3 py-1 cursor-pointer" key={index}>
                 <li key={index}>{skill.name}</li>
               </BackgroundGradient>
