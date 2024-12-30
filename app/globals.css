@@ -66,6 +66,10 @@
   }
 } */
 
-body{
+body {
   background-color: rgb(7, 5, 5);
+}
+
+.social {
+  filter: drop-shadow(-0.6px 3.5px 20px #d4d4d8);
 }
