@@ -102,7 +102,7 @@ const ContactSection = () => {
           {errors.message && (
             <p className='text-red-500 -mt-3 -mb-2'>Please enter a message</p>
           )}
-          <SendBtn />
+          <SendBtn err={errors}/>
         </form>
       </div>
     </main>
