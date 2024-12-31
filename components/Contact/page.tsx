@@ -14,7 +14,7 @@ import axios from 'axios';
 import {
   IconBrandGithub,
   IconBrandLinkedin,
-  IconBrandTwitter,
+  IconBrandX,
   IconMail,
 } from '@tabler/icons-react';
 import { SendBtn } from './SendBtn';
@@ -66,7 +66,7 @@ const ContactSection = () => {
             href='https://x.com/saatvik__10?t=xfxKasWQvlAi-SBV_agM8Q&s=09'
             target='_blank'
           >
-            <IconBrandTwitter className='social text-zinc-300 size-28' />
+            <IconBrandX className='social text-zinc-300 size-28' />
           </Link>
         </div>
 

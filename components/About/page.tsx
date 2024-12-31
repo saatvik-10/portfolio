@@ -11,7 +11,7 @@ const AboutSection = () => {
         {/* <span className='text-3xl'>Yello...</span> */}
         <h1 className='text-7xl font-bold'>Saatvik Madan</h1>
         <span className='text-3xl'>
-          <FlipWords words={fwords} className='px-2 text-emerald-700 font-bold' />
+          <FlipWords words={fwords} className='px-2 text-zinc-600 font-bold' />
           <p className='text-6xl pt-14 text-zinc-300 '>
             Turning Your Ideas Into Impactful Designs
           </p>

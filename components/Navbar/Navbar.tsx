@@ -1,12 +1,12 @@
 import React from 'react';
 import { FloatingDock } from '@/components/ui/floating-dock';
 import {
-  IconBrandGithub,
-  IconBrandX,
-  IconExchange,
+  IconAddressBook,
+  IconComponents,
+  IconDevicesCheck,
+  IconGitBranch,
   IconHome,
-  IconNewSection,
-  IconTerminal2,
+  IconMessageStar,
 } from '@tabler/icons-react';
 
 export function Navbar() {
@@ -19,28 +19,28 @@ export function Navbar() {
 
     {
       title: 'Projects',
-      icon: <IconTerminal2 className='h-full w-full text-zinc-300' />,
+      icon: <IconComponents className='h-full w-full text-zinc-300' />,
       href: '#',
     },
     {
-      title: 'Components',
-      icon: <IconNewSection className='h-full w-full text-zinc-300' />,
+      title: 'Skills',
+      icon: <IconGitBranch className='h-full w-full text-zinc-300' />,
       href: '#',
     },
     {
-      title: 'Changelog',
-      icon: <IconExchange className='h-full w-full text-zinc-300' />,
+      title: 'Services',
+      icon: <IconDevicesCheck className='h-full w-full text-zinc-300' />,
       href: '#',
     },
 
     {
-      title: 'Twitter',
-      icon: <IconBrandX className='h-full w-full text-zinc-300' />,
+      title: 'Testimonials',
+      icon: <IconMessageStar className='h-full w-full text-zinc-300' />,
       href: '#',
     },
     {
-      title: 'GitHub',
-      icon: <IconBrandGithub className='h-full w-full text-zinc-300' />,
+      title: 'Contact Me',
+      icon: <IconAddressBook className='h-full w-full text-zinc-300' />,
       href: '#',
     },
   ];
