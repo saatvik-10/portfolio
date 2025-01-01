@@ -14,34 +14,34 @@ export function Navbar() {
     {
       title: 'About',
       icon: <IconHome className='h-full w-full text-zinc-300' />,
-      href: '#',
+      href: '#about',
     },
 
     {
       title: 'Projects',
       icon: <IconComponents className='h-full w-full text-zinc-300' />,
-      href: '#',
+      href: '#projects',
     },
     {
       title: 'Skills',
       icon: <IconGitBranch className='h-full w-full text-zinc-300' />,
-      href: '#',
+      href: '#skills',
     },
     {
       title: 'Services',
       icon: <IconDevicesCheck className='h-full w-full text-zinc-300' />,
-      href: '#',
+      href: '#services',
     },
 
     {
       title: 'Testimonials',
       icon: <IconMessageStar className='h-full w-full text-zinc-300' />,
-      href: '#',
+      href: '#testimonials',
     },
     {
       title: 'Contact Me',
       icon: <IconAddressBook className='h-full w-full text-zinc-300' />,
-      href: '#',
+      href: '#contactMe',
     },
   ];
   return (
