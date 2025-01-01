@@ -3,11 +3,12 @@ import { ProjectsList } from './ProjectsList';
 
 const ProjectsSection = () => {
   return (
+    <section id='projects'>
     <main className='flex flex-col py-20'>
       <span className='text-emerald-500 mb-16 text-7xl font-bold'>
         My Projects
       </span>
-      <section className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
         {ProjectsList.map((project, index) => (
           <Projects
             key={index}
@@ -18,8 +19,9 @@ const ProjectsSection = () => {
             img={project.img}
           />
         ))}
-      </section>
+      </div>
     </main>
+    </section>
   );
 };
 

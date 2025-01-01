@@ -46,7 +46,7 @@ export function SendBtn({ err }: SendBtnProps) {
   };
 
   return (
-    <div className='flex items-center justify-end'>
+    <div className='flex items-center justify-end' id='contact'>
       <Modal>
         {loading && (
           <div className='fixed inset-0 z-[1000]'>

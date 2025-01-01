@@ -41,7 +41,7 @@ export function Navbar() {
     {
       title: 'Contact Me',
       icon: <IconAddressBook className='h-full w-full text-zinc-300' />,
-      href: '#contactMe',
+      href: '#contact',
     },
   ];
   return (

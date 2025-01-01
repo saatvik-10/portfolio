@@ -13,6 +13,16 @@ import {
 import Link from 'next/link';
 import { useRef, useState } from 'react';
 
+const scrollToElement = (href: string) => {
+  const element = document.querySelector(href);
+  if (element) {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  }
+};
+
 export const FloatingDock = ({
   items,
   desktopClassName,
@@ -38,8 +48,20 @@ const FloatingDockMobile = ({
   className?: string;
 }) => {
   const [open, setOpen] = useState(false);
+
+  const handleClick = (href: string, e: React.MouseEvent) => {
+    e.preventDefault();
+    scrollToElement(href);
+    setOpen(false);
+  };
+
   return (
-    <div className={cn('relative block md:hidden', className)}>
+    <div
+      className={cn(
+        'relative block md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50',
+        className
+      )}
+    >
       <AnimatePresence>
         {open && (
           <motion.div
@@ -63,13 +85,13 @@ const FloatingDockMobile = ({
                 }}
                 transition={{ delay: (items.length - 1 - idx) * 0.05 }}
               >
-                <Link
+                <a
                   href={item.href}
-                  key={item.title}
+                  onClick={(e) => handleClick(item.href, e)}
                   className='h-10 w-10 rounded-full bg-neutral-900 dark:bg-neutral-900 flex items-center justify-center'
                 >
                   <div className='h-4 w-4'>{item.icon}</div>
-                </Link>
+                </a>
               </motion.div>
             ))}
           </motion.div>
@@ -93,12 +115,13 @@ const FloatingDockDesktop = ({
   className?: string;
 }) => {
   let mouseX = useMotionValue(Infinity);
+
   return (
     <motion.div
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        'mx-auto hidden md:flex h-16 gap-4 items-end  rounded-2xl bg-neutral-900 dark:bg-neutral-900 px-4 pb-3 border-2 border-emerald-500',
+        'mx-auto hidden md:flex h-16 gap-4 items-end rounded-2xl bg-neutral-900 dark:bg-neutral-900 px-4 pb-3 border-2 border-emerald-500 fixed top-16 left-1/2 -translate-x-1/2 z-50000',
         className
       )}
     >
@@ -121,16 +144,15 @@ function IconContainer({
   href: string;
 }) {
   let ref = useRef<HTMLDivElement>(null);
+  const [hovered, setHovered] = useState(false);
 
   let distance = useTransform(mouseX, (val) => {
     let bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
-
     return val - bounds.x - bounds.width / 2;
   });
 
   let widthTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
   let heightTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
-
   let widthTransformIcon = useTransform(distance, [-150, 0, 150], [20, 40, 20]);
   let heightTransformIcon = useTransform(
     distance,
@@ -148,7 +170,6 @@ function IconContainer({
     stiffness: 150,
     damping: 12,
   });
-
   let widthIcon = useSpring(widthTransformIcon, {
     mass: 0.1,
     stiffness: 150,
@@ -160,10 +181,13 @@ function IconContainer({
     damping: 12,
   });
 
-  const [hovered, setHovered] = useState(false);
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    scrollToElement(href);
+  };
 
   return (
-    <Link href={href}>
+    <a href={href} onClick={handleClick}>
       <motion.div
         ref={ref}
         style={{ width, height }}
@@ -190,6 +214,6 @@ function IconContainer({
           {icon}
         </motion.div>
       </motion.div>
-    </Link>
+    </a>
   );
 }
