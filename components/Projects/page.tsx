@@ -1,5 +1,5 @@
 import { Projects } from '@/components/Projects/Projects';
-import { ProjectsList } from './ProjectsList';
+import { ProjectsList } from '../../data/ProjectsList';
 
 const ProjectsSection = () => {
   return (

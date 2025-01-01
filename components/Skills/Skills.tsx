@@ -2,7 +2,7 @@
 import React from 'react';
 import { BackgroundGradient } from '../ui/background-gradient';
 import IconCloud from '@/components/ui/icon-cloud';
-import { SkillsList } from '@/components/Skills/SkillsList';
+import { SkillsList } from '@/data/SkillsList';
 
 const Skills = () => {
   return (
