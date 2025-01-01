@@ -31,5 +31,5 @@ export function Testimonials() {
       src: '/testimonials/test4.jpeg',
     },
   ];
-  return <AnimatedTestimonials testimonials={testimonials} autoplay={true} />;
+  return <AnimatedTestimonials testimonials={testimonials} />;
 }
