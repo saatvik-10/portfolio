@@ -1,25 +1,43 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import Link from 'next/link';
-import { Input } from '../ui/input';
-import { Textarea } from '../ui/textarea';
-import { useForm } from 'react-hook-form';
-import {
-  ContactInput,
-  contactInputValidator,
-} from '@/validators/contact.validator';
-import { zodResolver } from '@hookform/resolvers/zod';
-import axios from 'axios';
+import { Modal } from '../ui/animated-modal';
+import { MultiStepLoader as Loader } from '../ui/multi-step-loader';
 import {
   IconBrandGithub,
   IconBrandLinkedin,
   IconBrandX,
   IconMail,
 } from '@tabler/icons-react';
-import { SendBtn } from './SendBtn';
+import { Input } from '../ui/input';
+import { Textarea } from '../ui/textarea';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import {
+  ContactInput,
+  contactInputValidator,
+} from '@/validators/contact.validator';
 
 const ContactSection = () => {
+  const [loading, setLoading] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const loadingStates = [
+    {
+      text: 'Connecting to mail server...',
+    },
+    {
+      text: 'This might take a few seconds',
+    },
+    {
+      text: 'Sending your email...',
+    },
+    {
+      text: 'Mail sent successfully!',
+    },
+  ];
+
   const {
     register,
     handleSubmit,
@@ -27,17 +45,36 @@ const ContactSection = () => {
   } = useForm<ContactInput>({
     resolver: zodResolver(contactInputValidator),
   });
+
   const handleFormSubmit = async (data: ContactInput) => {
-    // try {
-    //     await axios.post('/api/contact', data)
-    //     toast({ title: 'Your message was send successfully!' })
-    // } catch (err) {
-    //     console.error(err)
-    //     toast({
-    //         title: 'Error Sending Message!',
-    //     })
-    // }
-    console.log(data);
+    try {
+      setLoading(true);
+
+      const formData = {
+        access_key: process.env.NEXT_PUBLIC_MAIL_ACCESS_KEY,
+        ...data,
+      };
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        formRef.current?.reset();
+      } else {
+        console.log(errors);
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+    }
   };
 
   return (
@@ -72,6 +109,7 @@ const ContactSection = () => {
           </div>
 
           <form
+            ref={formRef}
             onSubmit={handleSubmit(handleFormSubmit)}
             className='form w-full h-full overflow-hidden flex-col flex gap-5'
           >
@@ -103,7 +141,30 @@ const ContactSection = () => {
             {errors.message && (
               <p className='text-red-500 -mt-3 -mb-2'>Please enter a message</p>
             )}
-            <SendBtn err={errors} />
+            <Modal>
+              <div className='flex items-center justify-end' id='contact'>
+                {loading && (
+                  <div className='fixed inset-0'>
+                    <Loader
+                      loadingStates={loadingStates}
+                      loading={loading}
+                      duration={2000}
+                    />
+                  </div>
+                )}
+                <button
+                  type='submit'
+                  className='bg-white py-1 rounded-lg text-emerald-500 flex justify-center group/modal-btn w-full relative'
+                >
+                  <span className='group-hover/modal-btn:translate-x-80 text-center transition duration-500 font-extrabold'>
+                    Send Message
+                  </span>
+                  <div className='-translate-x-80 group-hover/modal-btn:translate-x-0 flex items-center justify-center absolute inset-0 transition duration-500 text-zinc-300 '>
+                    <IconMail className='size-10 text-emerald-500' />
+                  </div>
+                </button>
+              </div>
+            </Modal>
           </form>
         </div>
       </main>
