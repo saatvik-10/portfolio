@@ -1,5 +1,4 @@
 'use client';
-
 import { useEffect, useMemo, useState } from 'react';
 import { useTheme } from 'next-themes';
 import {
@@ -11,7 +10,7 @@ import {
 } from 'react-icon-cloud';
 
 export type DynamicCloudProps = {
-  iconSlugs?: string[]; // Made iconSlugs optional
+  iconSlugs?: string[];
   imageArray?: string[];
 };
 
@@ -38,15 +37,10 @@ export const cloudProps: Omit<ICloud, 'children'> = {
     outlineColour: '#0000',
     maxSpeed: 0.04,
     minSpeed: 0.02,
-    // dragControl: false,
   },
 };
 
-export const renderCustomIcon = (
-  icon: SimpleIcon,
-  theme: string,
-  imageArray?: string[]
-) => {
+const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
   const bgHex = '#D4D4D8';
   const fallbackHex = '#D4D4D8';
   const minContrastRatio = theme === 'dark' ? 2 : 1.2;
@@ -61,49 +55,67 @@ export const renderCustomIcon = (
       href: undefined,
       target: undefined,
       rel: undefined,
-      onClick: (e: any) => e.preventDefault(),
+      onClick: (e) => e.preventDefault(),
     },
   });
 };
 
-type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>;
-
 export default function IconCloud({
-  iconSlugs = [], // Default to an empty array if not provided
-  imageArray,
+  iconSlugs = [],
+  imageArray = [],
 }: DynamicCloudProps) {
-  const [data, setData] = useState<IconData | null>(null);
-  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const [data, setData] = useState<Awaited<
+    ReturnType<typeof fetchSimpleIcons>
+  > | null>(null);
+  const { theme, systemTheme } = useTheme();
 
+  // Handle mounting
   useEffect(() => {
-    if (iconSlugs.length > 0) {
-      // Check if iconSlugs is not empty
+    setMounted(true);
+  }, []);
+
+  // Fetch icons data
+  useEffect(() => {
+    if (mounted && iconSlugs.length > 0) {
       fetchSimpleIcons({ slugs: iconSlugs }).then(setData);
     }
-  }, [iconSlugs]);
+  }, [iconSlugs, mounted]);
+
+  const currentTheme = theme === 'system' ? systemTheme : theme;
 
   const renderedIcons = useMemo(() => {
-    if (!data) return null;
-
+    if (!data || !mounted) return [];
     return Object.values(data.simpleIcons).map((icon) =>
-      renderCustomIcon(icon, theme || 'light')
+      renderCustomIcon(icon, currentTheme || 'light')
     );
-  }, [data, theme]);
+  }, [data, currentTheme, mounted]);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     // @ts-ignore
     <Cloud {...cloudProps}>
       <>
-        <>{renderedIcons}</>
-        {imageArray &&
-          imageArray.length > 0 &&
-          imageArray.map((image, index) => {
-            return (
-              <a key={index} href='#' onClick={(e) => e.preventDefault()}>
-                <img height='56' width='56' alt='A globe' src={image} />
-              </a>
-            );
-          })}
+        {renderedIcons.length > 0 && <>{renderedIcons}</>}
+        {imageArray.map((image, index) => (
+          <a
+            key={`img-${index}`}
+            href='#'
+            onClick={(e) => e.preventDefault()}
+            className='block'
+          >
+            <img
+              height='56'
+              width='56'
+              alt={`Skill icon ${index + 1}`}
+              src={image}
+              className='object-contain'
+            />
+          </a>
+        ))}
       </>
     </Cloud>
   );

@@ -1,13 +1,22 @@
 'use client';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BackgroundGradient } from '../ui/background-gradient';
 import IconCloud from '@/components/ui/icon-cloud';
 import { SkillsList } from '@/data/SkillsList';
 
 const Skills = () => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <section>
-      <span>My SKills</span>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
         <div className='relative flex md:size-96 max-w-lg items-center justify-center overflow-hidden'>
           <IconCloud
@@ -32,9 +41,9 @@ const Skills = () => {
             {SkillsList.map((skill, index) => (
               <BackgroundGradient
                 className='rounded-[22px] bg-neutral-800 px-3 py-1 cursor-pointer'
-                key={index}
+                key={`skill-${index}`}
               >
-                <li key={index}>{skill.name}</li>
+                <li>{skill.name}</li>
               </BackgroundGradient>
             ))}
           </ul>
