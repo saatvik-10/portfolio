@@ -79,7 +79,7 @@ const ContactSection = () => {
 
   return (
     <section id='contact'>
-      <main className='py-20'>
+      <main className='pt-20'>
         <div className='text-emerald-500 md:mb-16 text-6xl text-center md:text-start md:text-7xl font-bold'>
           Contact Me
         </div>
