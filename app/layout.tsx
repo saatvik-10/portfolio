@@ -2,9 +2,9 @@ import Spotlight from '@/components/Bg/Spotlight';
 import './globals.css';
 import { Navbar } from '@/components/Navbar/Navbar';
 import type { Metadata } from 'next';
-import { Noto_Sans_Anatolian_Hieroglyphs } from 'next/font/google';
+import { ADLaM_Display } from 'next/font/google';
 
-const inter = Noto_Sans_Anatolian_Hieroglyphs({
+const inter = ADLaM_Display({
   weight: '400',
   subsets: ['latin'],
 });
@@ -27,8 +27,6 @@ export default function RootLayout({
           <main className='mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8'>
             {children}
           </main>
-          {/* <Footer />
-          <ToastContainer /> */}
         </Spotlight>
       </body>
     </html>
