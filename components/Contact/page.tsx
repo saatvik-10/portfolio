@@ -70,6 +70,11 @@ const ContactSection = () => {
 
       if (result.success) {
         formRef.current?.reset();
+        setLoading(true);
+        setTimeout(() => {
+          setLoading(false);
+          window.location.reload();
+        }, 9000);
       } else {
         console.log(errors);
       }
