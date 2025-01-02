@@ -4,9 +4,9 @@ const SkillsSection = () => {
   return (
     <section id='skills'>
       <main className='py-20'>
-        <span className='text-emerald-500 mb-16 text-7xl font-bold'>
+        <div className='text-emerald-500  md:mb-16 text-6xl md:text-7xl text-center md:text-start font-bold'>
           My Skills
-        </span>
+        </div>
         <div>
           <Skills />
         </div>

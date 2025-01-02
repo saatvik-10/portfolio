@@ -58,11 +58,11 @@ const FloatingDockMobile = ({
   return (
     <div
       className={cn(
-        ' md:hidden flex z-50',
+        ' md:hidden flex z-50 ml-4',
         className
       )}
     >
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {open && (
           <motion.div
             layoutId='nav'
@@ -102,7 +102,7 @@ const FloatingDockMobile = ({
         className='h-10 w-10 rounded-full bg-neutral-900 flex items-center justify-center'
       >
         <IconLayoutNavbarCollapse className='h-5 w-5 text-zinc-300 rotate-90' />
-      </button>
+      </button> */}
     </div>
   );
 };

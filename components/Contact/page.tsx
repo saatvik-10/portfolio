@@ -80,29 +80,39 @@ const ContactSection = () => {
   return (
     <section id='contact'>
       <main className='py-20'>
-        <span className='text-emerald-500 mb-16 text-7xl font-bold'>
+        <div className='text-emerald-500 md:mb-16 text-6xl text-center md:text-start md:text-7xl font-bold'>
           Contact Me
-        </span>
+        </div>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8 pt-14'>
           <div className='grid grid-cols-2 gap-y-8'>
             <Link
               href='https://www.linkedin.com/in/saatvik-madan-9ab4a32a9/'
               target='_blank'
+              className='flex justify-center md:justify-start'
             >
               <IconBrandLinkedin className='social text-zinc-300 size-28' />
             </Link>
 
-            <Link href='mailto:yello@itsaatvik.dev' target='_blank'>
+            <Link
+              href='mailto:yello@itsaatvik.dev'
+              target='_blank'
+              className='flex justify-center md:justify-start'
+            >
               <IconMail className='social text-zinc-300 size-28' />
             </Link>
 
-            <Link href='https://github.com/saatvik-10' target='_blank'>
+            <Link
+              href='https://github.com/saatvik-10'
+              target='_blank'
+              className='flex justify-center md:justify-start'
+            >
               <IconBrandGithub className='social text-zinc-300 size-28' />
             </Link>
 
             <Link
               href='https://x.com/saatvik__10?t=xfxKasWQvlAi-SBV_agM8Q&s=09'
               target='_blank'
+              className='flex justify-center md:justify-start'
             >
               <IconBrandX className='social text-zinc-300 size-28' />
             </Link>

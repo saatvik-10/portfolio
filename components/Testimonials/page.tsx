@@ -3,10 +3,10 @@ import { Testimonials } from './Testimonials';
 const TestimonialsSection = () => {
   return (
     <section id='testimonials'>
-      <main className='py-20'>
-        <span className='text-emerald-500 mb-16 text-7xl font-bold'>
-          Testimonials
-        </span>
+      <main className=''>
+      <span className='text-emerald-500 md:mb-16 text-6xl text-center md:text-start md:text-7xl font-bold'>
+        Testimonials
+      </span>
         <div>
           <Testimonials />
         </div>

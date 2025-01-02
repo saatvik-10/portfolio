@@ -12,7 +12,7 @@ const backend =
 
 export function ServicesCard() {
   return (
-    <div className='w-5xl mx-auto py-4'>
+    <div className='w-5xl mx-auto'>
       <HoverEffect items={Services} />
     </div>
   );
