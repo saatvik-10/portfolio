@@ -3,7 +3,6 @@ import './globals.css';
 import { Navbar } from '@/components/Navbar/Navbar';
 import type { Metadata } from 'next';
 import { ADLaM_Display } from 'next/font/google';
-import Head from 'next/head';
 
 const inter = ADLaM_Display({
   weight: '400',

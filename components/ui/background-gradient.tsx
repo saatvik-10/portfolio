@@ -40,7 +40,7 @@ export const BackgroundGradient = ({
           backgroundSize: animate ? '400% 400%' : undefined,
         }}
         className={cn(
-          'absolute inset-0 rounded-3xl z-[1] opacity-50 group-hover:opacity-100 blur-xl  transition duration-500 will-change-transform',
+          'absolute inset-0 rounded-3xl opacity-50 group-hover:opacity-100 blur-xl  transition duration-500 will-change-transform',
           'bg-[radial-gradient(circle_farthest-side_at_0_100%,#10B981,transparent),radial-gradient(circle_farthest-side_at_100%_0,#059669,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#34D399,transparent),radial-gradient(circle_farthest-side_at_0_0,#6EE7B7,#064E3B)]'
         )}
       />
@@ -61,12 +61,12 @@ export const BackgroundGradient = ({
           backgroundSize: animate ? '400% 400%' : undefined,
         }}
         className={cn(
-          'absolute inset-0 rounded-3xl z-[1] will-change-transform',
+          'absolute inset-0 rounded-3xl will-change-transform',
           'bg-[radial-gradient(circle_farthest-side_at_0_100%,#10B981,transparent),radial-gradient(circle_farthest-side_at_100%_0,#059669,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#34D399,transparent),radial-gradient(circle_farthest-side_at_0_0,#6EE7B7,#064E3B)]'
         )}
       />
 
-      <div className={cn('relative z-10', className)}>{children}</div>
+      <div className={cn('relative', className)}>{children}</div>
     </div>
   );
 };

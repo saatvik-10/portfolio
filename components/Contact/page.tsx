@@ -18,6 +18,7 @@ import {
   ContactInput,
   contactInputValidator,
 } from '@/validators/contact.validator';
+import { Button } from '../ui/button';
 
 const ContactSection = () => {
   const [loading, setLoading] = useState(false);
@@ -162,17 +163,17 @@ const ContactSection = () => {
                     />
                   </div>
                 )}
-                <button
+                <Button
                   type='submit'
-                  className='bg-white py-1 rounded-lg text-emerald-500 flex justify-center group/modal-btn w-full relative'
+                  className='bg-white rounded-lg text-emerald-500 flex justify-center group/modal-btn w-full relative'
                 >
                   <span className='group-hover/modal-btn:translate-x-80 text-center transition duration-500 font-extrabold'>
                     Send Message
                   </span>
                   <div className='-translate-x-80 group-hover/modal-btn:translate-x-0 flex items-center justify-center absolute inset-0 transition duration-500 text-zinc-300 '>
-                    <IconMail className='size-10 text-emerald-500' />
+                    <IconMail className='text-emerald-500' />
                   </div>
-                </button>
+                </Button>
               </div>
             </Modal>
           </form>

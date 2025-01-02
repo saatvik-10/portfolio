@@ -10,7 +10,6 @@ import {
   useSpring,
   useTransform,
 } from 'framer-motion';
-import Link from 'next/link';
 import { useRef, useState } from 'react';
 
 const scrollToElement = (href: string) => {
@@ -56,7 +55,7 @@ const FloatingDockMobile = ({
   };
 
   return (
-    <div className={cn(' md:hidden flex z-50 ml-4', className)}>
+    <div className={cn(' md:hidden flex z-100 ml-4', className)}>
       {/* <AnimatePresence>
         {open && (
           <motion.div
