@@ -3,6 +3,7 @@ import './globals.css';
 import { Navbar } from '@/components/Navbar/Navbar';
 import type { Metadata } from 'next';
 import { ADLaM_Display } from 'next/font/google';
+import Head from 'next/head';
 
 const inter = ADLaM_Display({
   weight: '400',
@@ -12,6 +13,9 @@ const inter = ADLaM_Display({
 export const metadata: Metadata = {
   title: 'Portfolio',
   description: 'Portfolio',
+  icons: {
+    icon: '/favicon.png',
+  },
 };
 
 export default function RootLayout({
