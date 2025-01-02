@@ -46,7 +46,11 @@ export function Navbar() {
   ];
   return (
     <div className='flex items-start md:py-20 md:justify-center w-full'>
-      <FloatingDock mobileClassName='translate-y-0' items={links} desktopClassName='z-[100]'/>
+      <FloatingDock
+        mobileClassName='translate-y-0'
+        items={links}
+        desktopClassName='z-[100]'
+      />
     </div>
   );
 }

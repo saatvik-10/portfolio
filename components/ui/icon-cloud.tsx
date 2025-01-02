@@ -1,27 +1,27 @@
-"use client";
+'use client';
 
-import { useEffect, useMemo, useState } from "react";
-import { useTheme } from "next-themes";
+import { useEffect, useMemo, useState } from 'react';
+import { useTheme } from 'next-themes';
 import {
   Cloud,
   fetchSimpleIcons,
   ICloud,
   renderSimpleIcon,
   SimpleIcon,
-} from "react-icon-cloud";
+} from 'react-icon-cloud';
 
 export type DynamicCloudProps = {
   iconSlugs?: string[]; // Made iconSlugs optional
   imageArray?: string[];
 };
 
-export const cloudProps: Omit<ICloud, "children"> = {
+export const cloudProps: Omit<ICloud, 'children'> = {
   containerProps: {
     style: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      width: "100%",
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '100%',
       paddingTop: 40,
     },
   },
@@ -30,12 +30,12 @@ export const cloudProps: Omit<ICloud, "children"> = {
     depth: 1,
     wheelZoom: false,
     imageScale: 2,
-    activeCursor: "default",
-    tooltip: "native",
+    activeCursor: 'default',
+    tooltip: 'native',
     initial: [0.1, -0.1],
     clickToFront: 500,
     tooltipDelay: 0,
-    outlineColour: "#0000",
+    outlineColour: '#0000',
     maxSpeed: 0.04,
     minSpeed: 0.02,
     // dragControl: false,
@@ -45,11 +45,11 @@ export const cloudProps: Omit<ICloud, "children"> = {
 export const renderCustomIcon = (
   icon: SimpleIcon,
   theme: string,
-  imageArray?: string[],
+  imageArray?: string[]
 ) => {
-  const bgHex = "#D4D4D8";
-  const fallbackHex = "#D4D4D8";
-  const minContrastRatio = theme === "dark" ? 2 : 1.2;
+  const bgHex = '#D4D4D8';
+  const fallbackHex = '#D4D4D8';
+  const minContrastRatio = theme === 'dark' ? 2 : 1.2;
 
   return renderSimpleIcon({
     icon,
@@ -86,7 +86,7 @@ export default function IconCloud({
     if (!data) return null;
 
     return Object.values(data.simpleIcons).map((icon) =>
-      renderCustomIcon(icon, theme || "light"),
+      renderCustomIcon(icon, theme || 'light')
     );
   }, [data, theme]);
 
@@ -99,8 +99,8 @@ export default function IconCloud({
           imageArray.length > 0 &&
           imageArray.map((image, index) => {
             return (
-              <a key={index} href="#" onClick={(e) => e.preventDefault()}>
-                <img height="56" width="56" alt="A globe" src={image} />
+              <a key={index} href='#' onClick={(e) => e.preventDefault()}>
+                <img height='56' width='56' alt='A globe' src={image} />
               </a>
             );
           })}

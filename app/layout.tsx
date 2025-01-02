@@ -3,11 +3,11 @@ import './globals.css';
 import { Navbar } from '@/components/Navbar/Navbar';
 import type { Metadata } from 'next';
 import { Noto_Sans_Anatolian_Hieroglyphs } from 'next/font/google';
-// import Footer from '@/components/Footer';
-// import { ToastContainer } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
 
-const inter = Noto_Sans_Anatolian_Hieroglyphs({ weight: '400', subsets: ['latin'] });
+const inter = Noto_Sans_Anatolian_Hieroglyphs({
+  weight: '400',
+  subsets: ['latin'],
+});
 
 export const metadata: Metadata = {
   title: 'Portfolio',
