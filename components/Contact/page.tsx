@@ -83,7 +83,7 @@ const ContactSection = () => {
         <div className='text-emerald-500 md:mb-16 text-6xl text-center md:text-start md:text-7xl font-bold'>
           Contact Me
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-8 pt-14'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-8 pt-8'>
           <div className='grid grid-cols-2 gap-y-8'>
             <Link
               href='https://www.linkedin.com/in/saatvik-madan-9ab4a32a9/'

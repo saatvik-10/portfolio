@@ -7,7 +7,7 @@ const fwords = ['WEB DEVELOPER', 'CREATIVE DESIGNER', 'PROBLEM SOLVER'];
 const AboutSection = () => {
   return (
     <section id='about'>
-      <div className='grid grid-cols-1 md:grid-cols-2 text-emerald-500 gap-10 pt-8 pb-14 text-center md:text-start'>
+      <div className='grid grid-cols-1 md:grid-cols-2 text-emerald-500 gap-10 pt-8 pb-20 text-center md:text-start'>
         <div className='flex flex-col items-start gap-y-2'>
           <h1 className='text-center md:text-start text-6xl md:text-7xl font-bold'>
             Saatvik Madan
