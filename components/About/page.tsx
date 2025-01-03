@@ -17,7 +17,7 @@ const AboutSection = () => {
               words={fwords}
               className='px-2 text-zinc-600 font-bold'
             />
-            <p className='text-6xl pt-14 text-zinc-300 '>
+            <p className='text-4xl pt-14 text-zinc-300 '>
               Turning Your Ideas Into Impactful Designs
             </p>
           </span>

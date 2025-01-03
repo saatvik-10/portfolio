@@ -70,7 +70,7 @@ const ContactSection = () => {
   return (
     <section id='contact'>
       <main className='pt-20'>
-        <div className='text-emerald-500 mb-8 md:mb-16 text-6xl text-center md:text-start md:text-7xl font-bold'>
+        <div className='text-emerald-500 mb-8 md:mb-16 text-5xl text-center md:text-start md:text-7xl font-bold'>
           Contact Me
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
