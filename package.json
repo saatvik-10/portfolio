@@ -24,6 +24,7 @@
     "react-dom": "19.0.0-rc-66855b96-20241106",
     "react-hook-form": "^7.54.2",
     "react-icon-cloud": "^4.1.4",
+    "resend": "^4.0.1",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.24.1"

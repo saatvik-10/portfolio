@@ -10,6 +10,7 @@ import {
   IconBrandX,
   IconMail,
 } from '@tabler/icons-react';
+import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
 import { useForm } from 'react-hook-form';
@@ -18,7 +19,7 @@ import {
   ContactInput,
   contactInputValidator,
 } from '@/validators/contact.validator';
-import { Button } from '../ui/button';
+import { sendEmail } from '@/lib/resend';
 
 const ContactSection = () => {
   const [loading, setLoading] = useState(false);
@@ -49,25 +50,9 @@ const ContactSection = () => {
 
   const handleFormSubmit = async (data: ContactInput) => {
     try {
-      setLoading(true);
+      const res = await sendEmail(data);
 
-      const formData = {
-        access_key: process.env.NEXT_PUBLIC_MAIL_ACCESS_KEY,
-        ...data,
-      };
-
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const result = await response.json();
-
-      if (result.success) {
+      if (res.success) {
         formRef.current?.reset();
         setLoading(true);
         setTimeout(() => {
