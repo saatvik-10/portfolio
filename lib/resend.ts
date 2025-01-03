@@ -21,8 +21,6 @@ export const sendEmail = async (data: ContactInput) => {
           `,
     });
 
-    console.log(result);
-
     return { success: true, data: result };
   } catch (error: any) {
     return { success: false, error: error };
