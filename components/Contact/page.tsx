@@ -73,7 +73,7 @@ const ContactSection = () => {
         setLoading(true);
         setTimeout(() => {
           setLoading(false);
-          window.location.reload();
+          location.reload();
         }, 9000);
       } else {
         console.log(errors);
