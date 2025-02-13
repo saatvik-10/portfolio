@@ -21,10 +21,10 @@ export const SkillsList = [
     name: 'Prisma',
   },
   {
-    name: 'MongoDB',
+    name: 'Databases',
   },
   {
-    name: 'PostreSQL',
+    name: 'GoLang',
   },
   {
     name: 'Express',
