@@ -33,6 +33,7 @@ const Skills = () => {
               '/skills/tailwind.png',
               '/skills/js.png',
               '/skills/nodejs.png',
+              '/skills/golang.png',
             ]}
           />
         </div>
