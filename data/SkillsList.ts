@@ -18,7 +18,7 @@ export const SkillsList = [
     name: 'Java',
   },
   {
-    name: 'Prisma',
+    name: 'ORMs',
   },
   {
     name: 'Databases',
@@ -33,6 +33,6 @@ export const SkillsList = [
     name: 'TailwindCSS',
   },
   {
-    name: 'Javascript',
+    name: 'AWS',
   },
 ];
