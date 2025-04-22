@@ -18,6 +18,6 @@ export const ProjectsList = [
     href: 'https://admin-dashboard.itsaatvik.dev/',
     name: 'Dashboard',
     desc: 'Admin Dashboard',
-    img: '/projects/dashboard.png',
+    img: '/projects/admin-dashboard.png',
   },
 ];
