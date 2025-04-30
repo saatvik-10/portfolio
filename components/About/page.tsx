@@ -22,7 +22,7 @@ const AboutSection = () => {
             </p>
           </span>
         </div>
-        <div className='flex items-center justify-center'>
+        <div className='flex items-center justify-center relative'>
           <Image
             alt=''
             src='/pfp.png'
@@ -30,6 +30,7 @@ const AboutSection = () => {
             height='300'
             className='drop-shadow-[0.10px_-0.25px_0.5px_rgba(16,185,129,1)]'
           />
+          <div className='absolute bottom-0 w-full h-6 backdrop-blur-sm'></div>
         </div>
       </div>
     </section>
