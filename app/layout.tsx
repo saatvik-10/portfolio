@@ -3,6 +3,7 @@ import './globals.css';
 import { Navbar } from '@/components/Navbar/Navbar';
 import type { Metadata } from 'next';
 import { ADLaM_Display } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = ADLaM_Display({
   weight: '400',
@@ -29,6 +30,7 @@ export default function RootLayout({
           <Navbar />
           <main className='mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8'>
             {children}
+            <Analytics />
           </main>
         </Spotlight>
       </body>
