@@ -100,7 +100,7 @@ const ContactSection = () => {
             </Link>
 
             <Link
-              href='https://x.com/saatvik__10?t=xfxKasWQvlAi-SBV_agM8Q&s=09'
+              href='https://x.com/PhO3NiX___10?t=4qyjc2RpPpGgirWvl1kHqA&s=09'
               target='_blank'
               className='flex justify-center md:justify-start'
             >
