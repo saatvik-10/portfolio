@@ -16,7 +16,7 @@ export default function Home() {
       <ServicesSection />
       <TestimonialsSection />
       <ContactSection />
-      <Resume className='fixed md:hidden bottom-2 right-4 z-50' />
+      <Resume className='fixed md:hidden bottom-3 right-3 z-50' />
     </div>
   );
 }
