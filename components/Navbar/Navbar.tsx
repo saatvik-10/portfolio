@@ -4,10 +4,13 @@ import {
   IconAddressBook,
   IconComponents,
   IconDevicesCheck,
+  IconDownload,
   IconGitBranch,
   IconHome,
   IconMessageStar,
 } from '@tabler/icons-react';
+import { Button } from '../ui/button';
+import Resume from '../Asset/Resume';
 
 export function Navbar() {
   const links = [
@@ -51,6 +54,7 @@ export function Navbar() {
         items={links}
         desktopClassName='z-[100]'
       />
+      <Resume className='z-50 hidden md:flex fixed my-14 hover:bg-emerald-500/20' />
     </div>
   );
 }

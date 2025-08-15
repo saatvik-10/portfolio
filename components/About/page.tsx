@@ -1,6 +1,7 @@
 import React from 'react';
 import { FlipWords } from '@/components/ui/flip-words';
 import Image from 'next/image';
+import { Button } from '@/components/ui/button';
 
 const fwords = ['WEB DEVELOPER', 'CREATIVE DESIGNER', 'PROBLEM SOLVER'];
 

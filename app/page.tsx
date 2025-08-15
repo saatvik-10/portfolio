@@ -5,16 +5,18 @@ import ServicesSection from '@/components/Services/page';
 import SkillsSection from '@/components/Skills/page';
 import TestimonialsSection from '@/components/Testimonials/page';
 import ContactSection from '@/components/Contact/page';
+import Resume from '@/components/Asset/Resume';
 
 export default function Home() {
   return (
-    <div>
+    <div className='relative'>
       <AboutSection />
       <ProjectsSection />
       <SkillsSection />
       <ServicesSection />
       <TestimonialsSection />
       <ContactSection />
+      <Resume className='fixed md:hidden bottom-2 right-4 z-50' />
     </div>
   );
 }
