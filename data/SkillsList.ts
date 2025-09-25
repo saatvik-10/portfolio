@@ -3,6 +3,9 @@ export const SkillsList = [
     name: 'Typescript',
   },
   {
+    name: 'Solana',
+  },
+  {
     name: 'React',
   },
   {
@@ -15,24 +18,21 @@ export const SkillsList = [
     name: 'Hono',
   },
   {
-    name: 'Java',
-  },
-  {
     name: 'ORMs',
   },
   {
     name: 'Databases',
   },
   {
+    name: 'AWS',
+  {
+  },
+    name: 'Rust',
+  },
+  {
     name: 'GoLang',
   },
   {
-    name: 'Express',
-  },
-  {
     name: 'TailwindCSS',
-  },
-  {
-    name: 'AWS',
   },
 ];
