@@ -25,8 +25,8 @@ export const SkillsList = [
   },
   {
     name: 'AWS',
-  {
   },
+  {
     name: 'Rust',
   },
   {
