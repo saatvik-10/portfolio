@@ -10,7 +10,7 @@ export const ProjectsList = [
     title: 'Visit Website',
     href: 'https://dynero.itsaatvik.dev/',
     name: 'Dynero',
-    desc: 'Where Decentralization meets Centralization.',
+    desc: 'Where Decentralization meets Centralization. No worries of Private Key key, just a simple login',
     img: '/projects/dynero.png',
   },
   {
