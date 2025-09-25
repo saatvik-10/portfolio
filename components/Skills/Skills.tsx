@@ -21,7 +21,6 @@ const Skills = () => {
         <div className='relative flex md:size-96 max-w-lg items-center justify-center overflow-hidden'>
           <IconCloud
             imageArray={[
-              '/skills/ex.png',
               '/skills/typescript.png',
               '/skills/hono.png',
               '/skills/java.png',
@@ -36,6 +35,8 @@ const Skills = () => {
               '/skills/golang.png',
               '/skills/aws.png',
               '/skills/drizzle.png',
+              '/skills/rust.png',
+              '/skills/sol.svg',
             ]}
           />
         </div>
