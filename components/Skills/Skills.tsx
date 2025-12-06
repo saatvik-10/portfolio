@@ -37,6 +37,8 @@ const Skills = () => {
               '/skills/drizzle.png',
               '/skills/rust.png',
               '/skills/sol.svg',
+              '/skills/k8s.png',
+              '/skills/docker.png',
             ]}
           />
         </div>

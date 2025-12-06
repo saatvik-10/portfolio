@@ -15,7 +15,7 @@ export const SkillsList = [
     name: 'Node.js',
   },
   {
-    name: 'Hono',
+    name: 'DevOps',
   },
   {
     name: 'ORMs',
