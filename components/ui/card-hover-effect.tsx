@@ -21,7 +21,7 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10',
+        'grid grid-cols-1 md:grid-cols-2 lggrid-cols-2 py-10',
         className
       )}
     >
@@ -50,7 +50,7 @@ export const HoverEffect = ({
             )}
           </AnimatePresence>
           <Card>
-            <img src={item.img} alt='' />
+            <img src={item.img} alt='' className='w-56 h-56' />
             <CardTitle>{item.title}</CardTitle>
             <CardDescription>{item.description}</CardDescription>
           </Card>
@@ -75,7 +75,7 @@ export const Card = ({
       )}
     >
       <div className='relative'>
-        <div className='p-4'>{children}</div>
+        <div className='p-4 flex flex-col items-center'>{children}</div>
       </div>
     </div>
   );
@@ -90,7 +90,7 @@ export const CardTitle = ({
 }) => {
   return (
     <h4
-      className={cn('text-zinc-300 font-bold tracking-wide text-lg', className)}
+      className={cn('text-zinc-300 font-bold tracking-wide text-2xl', className)}
     >
       {children}
     </h4>
@@ -107,7 +107,7 @@ export const CardDescription = ({
   return (
     <div
       className={cn(
-        'mt-2 text-zinc-500 tracking-wide leading-relaxed text-sm',
+        'mt-2 text-zinc-500 tracking-wide leading-relaxed text-lg',
         className
       )}
     >

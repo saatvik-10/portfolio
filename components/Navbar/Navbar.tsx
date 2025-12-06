@@ -31,9 +31,9 @@ export function Navbar() {
       href: '#skills',
     },
     {
-      title: 'Services',
+      title: 'Me',
       icon: <IconDevicesCheck className='h-full w-full text-zinc-300' />,
-      href: '#services',
+      href: '#me',
     },
 
     {
